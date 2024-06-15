@@ -1,0 +1,12 @@
+.allCountries {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 60px 10px 0 10px;
+  gap: 20px;
+}
+
+.countryInfo{
+    width: 20%;
+}
