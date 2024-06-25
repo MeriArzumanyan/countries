@@ -1,5 +1,5 @@
 import axios from "axios";
-import { forGettingCountries, forGettingCountry } from "../src/Store/Store";
+import { forGettingCountries, forGettingCountry, forGettingRegion } from "../src/Store/Store";
 const instance = axios.create({
   baseURL: "https://restcountries.com/v3.1/",
 });
@@ -13,5 +13,8 @@ export const requests = {
       .get(`name/${name}`)
       .then((res) => dispatch(forGettingCountry(res.data)));
   },
+  getRegion(dispatch,regionName){
+    instance.get(`region/${regionName}`).then((res)=>dispatch(forGettingRegion(res.data)))
+  }
   
 };

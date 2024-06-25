@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { requests } from "../../../api/api";
+
 const Country = ({ dispatch, country }) => {
-  const { name } = useParams();
+   const { name } = useParams();
+
   useEffect(() => {
     requests.getOne(dispatch, name);
   }, [dispatch, name]);

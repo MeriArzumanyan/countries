@@ -13,18 +13,24 @@ function App() {
     requests.getAll(dispatch);
   }, []);
   return (
-    <div className="container"> 
-      <Nav />
+    <div className="container">
+      <Nav dispatch={dispatch} text={state.text}/>
 
       <Routes>
         <Route path="/" element={<Home countries={state.countries} />} />
         <Route
+          path="/region/:regionName"
+          element={<Home dispatch={dispatch} regions={state.regions} />}
+        />
+        <Route
           path="/name/:name"
           element={<Country dispatch={dispatch} country={state.country} />}
         />
+    
       </Routes>
     </div>
   );
 }
 
 export default App;
+/////////region ու search չեմ կարողացել ստանալ
